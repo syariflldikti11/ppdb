@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistem Informasi Kepegawaian</title>
+  <title>PAUD NURUL ISTIQOMAH</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -37,7 +37,7 @@
   <div class="login-box-body">
   <center>   <img width="50%" src="<?= base_url(); ?>assets/images/logopaud.jpg">
               <h3 class="box-title mb-3">Login</h3>  
-             Aplikasi Kepegawaian dan Pengelolaan Arsip Surat UPT Puskesmas Buntok
+            PPDB PAUD NURUL ISTIQOMAH
               </center>
 
    <?php

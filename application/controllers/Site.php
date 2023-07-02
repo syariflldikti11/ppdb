@@ -13,8 +13,8 @@ class Site extends CI_Controller
     }
     public function index()
     {
-        $data['dt_tahun_ajaran'] = $this->m_umum->get_tahun_ajaran();
-           $this->template->load('site/template', 'site/home',$data);
+      
+           $this->template->load('site/template', 'site/home');
         
     }
       public function visimisi()
@@ -71,6 +71,7 @@ class Site extends CI_Controller
         else {
   $data = array(
             'nama_siswa' => $this->input->post('nama_siswa'),
+            'id_tahun_ajaran' => $this->input->post('id_tahun_ajaran'),
             'tempat_lahir' => $this->input->post('tempat_lahir'),
             'tgl_lahir' => $this->input->post('tgl_lahir'),
             'jk' => $this->input->post('jk'),
@@ -90,6 +91,15 @@ class Site extends CI_Controller
             $this->session->set_flashdata('success', $notif);
             redirect(base_url() . "site/hasil_pendaftaran/" . $no_formulir);
         }
+    }
+     function guru()
+    {
+        $data = array(
+            'judul' => 'Data Guru',
+            
+            'dt_guru' => $this->m_umum->get_data('guru'),
+        );
+        $this->template->load('site/template', 'site/guru', $data);
     }
     function hasil_pendaftaran($no_formulir=false)
     {

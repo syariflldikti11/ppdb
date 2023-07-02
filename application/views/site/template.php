@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="<?= base_url(); ?>assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
+       <link rel="stylesheet"
+    href="<?= base_url(); ?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
     <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
@@ -29,6 +31,10 @@
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
+   <?php
+                                             $dt_tahun_ajaran=$this->m_umum->get_tahun_ajaran();
+                                         
+                                              ?>
 <div class="wrapper">
 
   <header class="main-header">
@@ -53,7 +59,7 @@
                
               </ul>
             </li>
-            <li class="active"><a href="#">Daftar Guru </a></li>
+            <li><a href="<?= base_url('site/guru'); ?>">Daftar Guru </a></li>
             <li><a href="<?= base_url('site/persyaratan'); ?>">Persyaratan PPDB</a></li>
             <li><a  data-toggle="modal" data-target="#add" href="#">Daftar</a></li>
             
@@ -219,6 +225,8 @@
 <script src="<?= base_url(); ?>assets/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?= base_url(); ?>assets/dist/js/demo.js"></script>
+ <script src="<?= base_url(); ?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="<?= base_url(); ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
   <script type="text/javascript">
@@ -233,6 +241,16 @@
     <?php } ?>
 
 
+  </script>
+  <script>
+    $(function () {
+      $('#example1').DataTable()
+    })
+  </script>
+  <script>
+    $(function () {
+      $('#example2').DataTable()
+    })
   </script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
